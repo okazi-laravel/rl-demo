@@ -37,3 +37,8 @@ Access the API documentation by opening your browser and navigating to:
 ```
 http://localhost:8000/api/documentation
 ```
+
+**NB:** The `tymon/jwt-auth` package appears to have been abandoned and isn’t compatible with Laravel 11. We have a new package on top of `tymon/jwt-auth` which is `php-open-source-saver/jwt-auth`. Follow these blogs for details:
+1. [Implementing JWT Authentication in Laravel 11](https://blog.logrocket.com/implementing-jwt-authentication-laravel-11/)
+2. [How to Implement JWT in Laravel API](https://dev.to/germanlozickyj/how-to-implement-jwt-in-laravel-api-4590)
+```
