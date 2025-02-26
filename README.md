@@ -8,6 +8,7 @@ composer create-project laravel/laravel rl-demo
 ## Step 2: Install the Reusable Library
 ```sh
 cd rl-demo  # Navigate to the project root
+composer install
 composer require bjitgroup/reusable-lib-laravel
 ```
 
