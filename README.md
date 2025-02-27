@@ -1,34 +1,44 @@
 # rl-demo
 
-## Step 1: Install Laravel
+## Step 1: checkout to the branch or create laravel project
 ```sh
 composer create-project laravel/laravel rl-demo
 ```
 
-## Step 2: Install the Reusable Library
+## Step 2: generate key and clear config
+```sh
+php artisan key:generate
+php artisan config:clear
+```
+
+## Step 3: Install All Composer Dependencies
 ```sh
 cd rl-demo  # Navigate to the project root
 composer install
+```
+
+## Step 4: Install Sanctum
+```sh
+php artisan install:api
+```
+
+## Step 5: Install the Reusable Library
+```sh
 composer require bjitgroup/reusable-lib-laravel
 ```
 
-## Step 3: Configure the .env File
+## Step 6: Configure the .env File
 Ensure the correct database connection and APP_URL settings:
 ```dotenv
 APP_URL=http://localhost:8000
 ```
 
-## Step 4: Install the Reusable Library
+## Step 7: Install the Reusable Library
 ```sh
 php artisan bjit:reusable-lib-install
 ```
 
-## Step 5: Install Sanctum
-```sh
-php artisan install:api
-```
-
-## Step 6: Serve the Application
+## Step 8: Serve the Application
 ```sh
 php artisan serve
 ```
