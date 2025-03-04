@@ -17,3 +17,4 @@ libmcrypt-dev
 libxml2-dev
 libicu-dev
 libonig-dev
+default-mysql-client

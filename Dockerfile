@@ -31,6 +31,10 @@ COPY --chown=www-data:www-data . /var/www
 # Change current user to www
 USER www-data
 
+RUN chmod +x entrypoint.sh
+
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
-CMD ["php-fpm"]
+
+# Run the script
+CMD ["sh", "/var/www/entrypoint.sh"]
