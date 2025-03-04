@@ -26,29 +26,8 @@ composer install --prefer-dist --no-interaction --no-progress --no-suggest --no-
 log "Generating application key..."
 php artisan key:generate --force
 
-# Wait for MySQL to be ready
-echo "Waiting for MySQL to start..."
-until mysql -h"${DB_HOST}" -u root -p"${DB_PASSWORD:-}" -e "SELECT 1"; do
-    echo "MySQL not available. Retrying..."
-    sleep 2
-done
-
-echo "MySQL is up! Running migrations..."
-
-log "Creating rl-demo table if it doesn't exist..."
-mysql -u root -p"${DB_PASSWORD}" -h "${DB_HOST}" -e "CREATE DATABASE IF NOT EXISTS \`${DB_DATABASE}\`;"
-
-log "Running optimize clear..."
-php artisan optimize:clear
-
-log "Running config cache..."
-php artisan config:cache
-
 log "Running migrations..."
 php artisan migrate --force
-
-log "Running seeders..."
-php artisan db:seed --force
 
 log "Creating storage link..."
 php artisan storage:link --force

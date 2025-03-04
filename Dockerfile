@@ -13,7 +13,8 @@ RUN apt-get update && cat /tmp/requirements.txt | xargs apt-get install -y
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN pecl install mcrypt
+RUN pecl install mcrypt-1.0.7 && docker-php-ext-enable mcrypt
+
 # Install extensions
 RUN docker-php-ext-install iconv intl xml soap opcache pdo pdo_mysql mysqli mbstring zip exif pcntl
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
